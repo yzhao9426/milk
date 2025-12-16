@@ -1,0 +1,4 @@
+Running benchmark with 100000 cows on 32 workers
+Benchmark start: 100000 cows with 32 workers
+Total time: 4.919 seconds
+Average per cow: 0.000049 seconds

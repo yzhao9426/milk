@@ -1,0 +1,10 @@
+Running gpu_cows_local on GPU...
+[CPU] computed 250 cows in 0.000302 s
+[GPU] computed 250 cows in 0.317571 s
+Max |CPU - GPU| difference: 9.536743e-07
+Sample (first 5 cows):
+cow   0: cpu=7.183606, gpu=7.183606
+cow   1: cpu=7.557739, gpu=7.557739
+cow   2: cpu=8.735240, gpu=8.735241
+cow   3: cpu=6.726208, gpu=6.726208
+cow   4: cpu=9.026358, gpu=9.026358

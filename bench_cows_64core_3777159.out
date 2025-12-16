@@ -1,0 +1,17 @@
+Running benchmark with 64 cores
+
+============================================================
+Benchmark start: 10000 cows with 64 workers
+Total time: 0.517 seconds
+Average per cow: 0.000052 seconds
+
+============================================================
+Benchmark start: 100000 cows with 64 workers
+Total time: 2.487 seconds
+Average per cow: 0.000025 seconds
+
+============================================================
+Benchmark start: 1000000 cows with 64 workers
+Total time: 19.008 seconds
+Average per cow: 0.000019 seconds
+

@@ -1,0 +1,2 @@
+/home/yzhao9426/opt-tests/gpu-env/lib64/python3.9/site-packages/numba/cuda/dispatcher.py:536: NumbaPerformanceWarning: Grid size 2 will likely result in GPU under-utilization due to low occupancy.
+  warn(NumbaPerformanceWarning(msg))

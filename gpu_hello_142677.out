@@ -1,0 +1,15 @@
+Running gpu_hello on GPU...
+cuda.is_available: True
+Found 1 CUDA devices
+id 0           b'NVIDIA A30'                              [SUPPORTED]
+                      Compute Capability: 8.0
+                           PCI Device ID: 0
+                              PCI Bus ID: 225
+                                    UUID: GPU-2f8092f5-2fce-e7ea-f8e2-5c806d85761f
+                                Watchdog: Disabled
+             FP32/FP64 Performance Ratio: 2
+Summary:
+	1/1 devices are supported
+GPU square kernel done for n=10000000
+Time elapsed: 0.5154 seconds
+Sample: x[12345]=0.001235, y[12345]=0.000002

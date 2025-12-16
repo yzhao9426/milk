@@ -1,0 +1,12 @@
+Running gpu_eggcart_batch on GPU...
+Computing CPU herd costs for 1000 carts × 250 cows ...
+[CPU] total time: 0.274 s
+Launching GPU kernel with grid=(63, 16), block=(16, 16) ...
+[GPU] kernel + copy time: 0.957 s
+Max |CPU - GPU| herd cost difference: 9.765625e-04
+Sample of first 5 carts (herd cost):
+cart   0: cpu=1970.476, gpu=1970.476
+cart   1: cpu=1925.860, gpu=1925.860
+cart   2: cpu=1923.392, gpu=1923.392
+cart   3: cpu=1915.268, gpu=1915.268
+cart   4: cpu=1966.137, gpu=1966.137

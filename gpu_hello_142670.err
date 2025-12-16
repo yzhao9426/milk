@@ -1,0 +1,76 @@
+Lmod has detected the following error: The following module(s) are unknown:
+"CUDA/12.6.0"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore_cache load "CUDA/12.6.0"
+
+Also make sure that all modulefiles written in TCL start with the string
+#%Module
+
+
+
+Traceback (most recent call last):
+  File "/home/yzhao9426/opt-tests/gpu-env/lib64/python3.9/site-packages/numba/cuda/cudadrv/nvvm.py", line 139, in __new__
+    inst.driver = open_cudalib('nvvm')
+  File "/home/yzhao9426/opt-tests/gpu-env/lib64/python3.9/site-packages/numba/cuda/cudadrv/libs.py", line 65, in open_cudalib
+    return ctypes.CDLL(path)
+  File "/usr/lib64/python3.9/ctypes/__init__.py", line 374, in __init__
+    self._handle = _dlopen(self._name, mode)
+OSError: libnvvm.so: cannot open shared object file: No such file or directory
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/yzhao9426/opt-tests/gpu_hello.py", line 42, in <module>
+    main()
+  File "/home/yzhao9426/opt-tests/gpu_hello.py", line 30, in main
+    square_kernel[blocks_per_grid, threads_per_block](x_dev, y_dev)
+  File "/home/yzhao9426/opt-tests/gpu-env/lib64/python3.9/site-packages/numba/cuda/dispatcher.py", line 539, in __call__
+    return self.dispatcher.call(args, self.griddim, self.blockdim,
+  File "/home/yzhao9426/opt-tests/gpu-env/lib64/python3.9/site-packages/numba/cuda/dispatcher.py", line 681, in call
+    kernel = _dispatcher.Dispatcher._cuda_call(self, *args)
+  File "/home/yzhao9426/opt-tests/gpu-env/lib64/python3.9/site-packages/numba/cuda/dispatcher.py", line 689, in _compile_for_args
+    return self.compile(tuple(argtypes))
+  File "/home/yzhao9426/opt-tests/gpu-env/lib64/python3.9/site-packages/numba/cuda/dispatcher.py", line 932, in compile
+    kernel = _Kernel(self.py_func, argtypes, **self.targetoptions)
+  File "/home/yzhao9426/opt-tests/gpu-env/lib64/python3.9/site-packages/numba/core/compiler_lock.py", line 35, in _acquire_compile_lock
+    return func(*args, **kwargs)
+  File "/home/yzhao9426/opt-tests/gpu-env/lib64/python3.9/site-packages/numba/cuda/dispatcher.py", line 83, in __init__
+    cres = compile_cuda(self.py_func, types.void, self.argtypes,
+  File "/home/yzhao9426/opt-tests/gpu-env/lib64/python3.9/site-packages/numba/core/compiler_lock.py", line 35, in _acquire_compile_lock
+    return func(*args, **kwargs)
+  File "/home/yzhao9426/opt-tests/gpu-env/lib64/python3.9/site-packages/numba/cuda/compiler.py", line 196, in compile_cuda
+    cres = compiler.compile_extra(typingctx=typingctx,
+  File "/home/yzhao9426/opt-tests/gpu-env/lib64/python3.9/site-packages/numba/core/compiler.py", line 744, in compile_extra
+    return pipeline.compile_extra(func)
+  File "/home/yzhao9426/opt-tests/gpu-env/lib64/python3.9/site-packages/numba/core/compiler.py", line 438, in compile_extra
+    return self._compile_bytecode()
+  File "/home/yzhao9426/opt-tests/gpu-env/lib64/python3.9/site-packages/numba/core/compiler.py", line 506, in _compile_bytecode
+    return self._compile_core()
+  File "/home/yzhao9426/opt-tests/gpu-env/lib64/python3.9/site-packages/numba/core/compiler.py", line 481, in _compile_core
+    raise e
+  File "/home/yzhao9426/opt-tests/gpu-env/lib64/python3.9/site-packages/numba/core/compiler.py", line 472, in _compile_core
+    pm.run(self.state)
+  File "/home/yzhao9426/opt-tests/gpu-env/lib64/python3.9/site-packages/numba/core/compiler_machinery.py", line 364, in run
+    raise e
+  File "/home/yzhao9426/opt-tests/gpu-env/lib64/python3.9/site-packages/numba/core/compiler_machinery.py", line 356, in run
+    self._runPass(idx, pass_inst, state)
+  File "/home/yzhao9426/opt-tests/gpu-env/lib64/python3.9/site-packages/numba/core/compiler_lock.py", line 35, in _acquire_compile_lock
+    return func(*args, **kwargs)
+  File "/home/yzhao9426/opt-tests/gpu-env/lib64/python3.9/site-packages/numba/core/compiler_machinery.py", line 311, in _runPass
+    mutated |= check(pss.run_pass, internal_state)
+  File "/home/yzhao9426/opt-tests/gpu-env/lib64/python3.9/site-packages/numba/core/compiler_machinery.py", line 273, in check
+    mangled = func(compiler_state)
+  File "/home/yzhao9426/opt-tests/gpu-env/lib64/python3.9/site-packages/numba/core/typed_passes.py", line 466, in run_pass
+    lower = self.lowering_class(targetctx, library, fndesc, interp,
+  File "/home/yzhao9426/opt-tests/gpu-env/lib64/python3.9/site-packages/numba/core/lowering.py", line 39, in __init__
+    self.module = self.library.create_ir_module(self.fndesc.unique_name)
+  File "/home/yzhao9426/opt-tests/gpu-env/lib64/python3.9/site-packages/numba/core/codegen.py", line 574, in create_ir_module
+    ir_module = self._codegen._create_empty_module(name)
+  File "/home/yzhao9426/opt-tests/gpu-env/lib64/python3.9/site-packages/numba/cuda/codegen.py", line 365, in _create_empty_module
+    ir_module.data_layout = nvvm.NVVM().data_layout
+  File "/home/yzhao9426/opt-tests/gpu-env/lib64/python3.9/site-packages/numba/cuda/cudadrv/nvvm.py", line 144, in __new__
+    raise NvvmSupportError(errmsg % e)
+numba.cuda.cudadrv.error.NvvmSupportError: libNVVM cannot be found. Do `conda install cudatoolkit`:
+libnvvm.so: cannot open shared object file: No such file or directory
